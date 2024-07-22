@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Extension Converter</title>
+    <link rel="stylesheet" href="/static/css/converter_styles.css">
+</head>
+<body> 
+
+    <div class="container">
+        <h2><img src="/static/img/image.gif" alt="image_converter">Image Converter</h2>
+        <input type="file" id="imageFileInput" accept="image/*">
+        <select id="imageExtensionSelect">
+            <option value=".jpg">JPG</option> 
+            <option value=".png">PNG</option>
+            <option value=".gif">GIF</option>
+            <option value=".bmp">BMP</option>  
+            <option value=".tiff">TIFF</option>
+            <option value=".webp">WEBP</option>
+            <option value=".svg">SVG</option>
+        </select>
+        <button onclick="convertImage()">Convert</button> 
+        <div id="imageOutput" class="output">
+            <div class="preview">
+                <img id="imagePreview" src="" alt="Image Preview">
+            </div>
+            <a id="downloadImage" download="converted_image">Download Converted Image</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2><img src="/static/img/audio.gif" alt="audio_converter">Audio Converter</h2>
+        <input type="file" id="audioFileInput" accept="audio/*">
+        <select id="audioExtensionSelect">
+            <option value=".mp3">MP3</option>
+            <option value=".wav">WAV</option>
+            <option value=".aiff">AIFF</option>
+            <option value=".flac">FLAC</option>
+            <option value=".aac">AAC</option>
+            <option value=".ogg">OGG</option>
+            <option value=".wma">WMA</option>
+        </select>
+        <button onclick="convertAudio()">Convert</button>
+        <div id="audioOutput" class="output">
+            <div class="preview">
+                <audio controls id="audioPreview" src="" alt="Audio Preview"></audio>
+            </div>
+            <a id="downloadAudio" download="converted_audio">Download Converted Audio</a>
+        </div>
+    </div>
+
+    <div class="container"> 
+        <h2><img src="/static/img/video.gif" alt="video_converter">Video Converter</h2>
+        <input type="file" id="videoFileInput" accept="video/*">
+        <select id="videoExtensionSelect">
+            <option value=".mp4">MP4</option>
+            <option value=".avi">AVI</option>
+            <option value=".mkv">MKV</option>
+            <option value=".mov">MOV</option>
+            <option value=".wmv">WMV</option>
+            <option value=".flv">FLV</option>
+            <option value=".webm">WebM</option>
+            <option value=".mpeg">MPEG</option>
+        </select>
+        <button onclick="convertVideo()">Convert</button>
+        <div id="videoOutput" class="output">
+            <div class="preview">
+                <video controls id="videoPreview" src="" alt="Video Preview"></video>
+            </div>
+            <a id="downloadVideo" download="converted_video">Download Converted Video</a>
+        </div>
+    </div>
+
+    <script src="/static/js/converter_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Converter & Editor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editing_styles.css') }}">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{{ url_for('static', filename='img/sidebar_logo.png') }}" alt="sidebar_logo">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">DOCCON</span>
+                    <span class="profession">Document Converter</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="{{ url_for('home') }}">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="{{ url_for('image_converter') }}">
+                            <i class='bx bx-image icon'></i>
+                            <span class="text nav-text">Image Converter</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('audio_converter') }}">
+                            <i class='bx bx-headphone icon'></i>
+                            <span class="text nav-text">Audio Converter</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('video_converter') }}">
+                            <i class='bx bx-video icon'></i>
+                            <span class="text nav-text">Video Converter</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="{{ url_for('pdf_to_word') }}">
+                            <i class='bx bx-note icon'></i>
+                            <span class="text nav-text">PDF to Word</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('word_to_pdf') }}">
+                            <i class='bx bx-detail icon'></i>
+                            <span class="text nav-text">Word to PDF</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="{{ url_for('editing') }}">
+                            <i class='bx bx-edit icon'></i>
+                            <span class="text nav-text">Editing</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('compressor') }}">
+                            <i class='bx bx-collapse icon'></i>
+                            <span class="text nav-text">Compress</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('about') }}">
+                            <i class='bx bx-user icon'></i>
+                            <span class="text nav-text">About </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="{{ url_for('logout') }}">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+    <section class="home">
+        <header class="header">
+            <h1><img src="{{ url_for('static', filename='img/main_logo.jpg') }}" alt="main_logo">Document Converter &
+                Editor</h1>
+        </header>
+        <div class="container disable">
+            <h2><img src="{{ url_for('static', filename='img/image_editor.gif') }}" alt="image_editor_logo">Image Editor
+            </h2>
+            <div class="wrapper">
+                <div class="editor-panel">
+                    <div class="filter">
+                        <label class="title">Filters</label>
+                        <div class="options">
+                            <button id="brightness" class="active">Brightness</button>
+                            <button id="saturation">Saturation</button>
+                            <button id="inversion">Inversion</button>
+                            <button id="grayscale">Grayscale</button>
+                        </div>
+                        <div class="slider">
+                            <div class="filter-info">
+                                <p class="name">Brightness</p>
+                                <p class="value">100%</p>
+                            </div>
+                            <input type="range" value="100" min="0" max="200">
+                        </div>
+                    </div>
+                    <div class="rotate">
+                        <label class="title">Rotate & Flip</label>
+                        <div class="options">
+                            <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                            <button id="horizontal"><i class="bx bx-reflect-vertical"></i></button>
+                            <button id="vertical"><i class="bx bx-reflect-horizontal"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-img">
+                    <img src="{{ url_for('static', filename='img/image-placeholder.svg') }}" alt="preview-img">
+                </div>
+            </div>
+            <div class="controls">
+                <button class="reset-filter">Reset Filters</button>
+                <div class="row">
+                    <input type="file" class="file-input" accept="image/*" hidden>
+                    <button class="choose-img">Choose Image</button>
+                    <button class="download-img">Download image</button>
+                </div>
+            </div>
+        </div>
+        <div align="center">
+            <div class="content">
+                <img src="{{ url_for('static', filename='img/fast_conversion.png') }}" alt="fast_conversion">
+                <p><strong>Fast Conversion </strong><br> With Document Converter, you can transform your files at
+                    lightning
+                    speed. Say
+                    goodbye to waiting endlessly for your documents to convert.</p>
+            </div>
+            <div class="content">
+                <img src="{{ url_for('static', filename='img/support_any_format.jpg') }}" alt="support_any_format">
+                <p><strong>Support any Format </strong><br> No more compatibility issues or headaches over file formats.
+                    Our
+                    Document Converter is your all-in-one solution, supporting a wide range of formats with seamless
+                    ease.
+                </p>
+            </div>
+            <div class="content">
+                <img src="{{ url_for('static', filename='img/works_online.png') }}" alt="works_online">
+                <p><strong>Works Online </strong><br> No need to install bulky software or worry about compatibility –
+                    our
+
+                    platform operates entirely online, accessible from any device with an internet connection.</p>
+            </div>
+            <div class="content">
+                <img src="{{ url_for('static', filename='img/user_friendly.png') }}" alt="user_friendly">
+                <p><strong>User Friendly </strong><br> Navigating through the complexities of document conversion has
+                    never been
+                    easier. Our Document Converter boasts a user-friendly interface designed with you in mind.</p>
+            </div>
+            <div class="content">
+                <img src="{{ url_for('static', filename='img/how_to_use.png') }}" alt="how_to_use">
+                <p><strong>How to Use </strong><br>Choose a image, audio, video and other document and then click the
+                    "Convert" button, wait a little bit until it's done and download the result. So simple!</p>
+            </div>
+            <div class="content">
+                <img src="{{ url_for('static', filename='img/word-to-pdf.svg') }}" alt="word_to_pdf">
+                <p><strong>Word and PDF Converter</strong><br>Upload your Word document, and the tool will convert and
+                    provide a download link for the PDF. vice-versa</p>
+            </div>
+            <div class="content">
+                <img src="{{ url_for('static', filename='img/secure.png') }}" alt="secure">
+                <p><strong>Secure</strong><br>Convert your documents securely - No Cloud, No Data Saved.</p>
+            </div>
+        </div>
+        <footer>
+
+            <p>&copy; 2024 Document Converter & Editor. All rights reserved.</p>
+        </footer>
+    </section>
+
+
+
+    <script src="{{ url_for('static', filename='js/editing_script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/home_script.js') }}"></script>
+</body>
+
+</html>

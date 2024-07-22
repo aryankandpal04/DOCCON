@@ -1,0 +1,106 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 50px;
+    margin: 20px auto;
+    border-radius: 80px;
+    box-shadow: 0 0 50px rgb(0, 42, 255);
+    width: 40%;
+    position: relative;
+    /* Added */
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #ff4800;
+    /* Default primary color */
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    /* Default primary color */
+    color: #fff;
+    border: black solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.output {
+    margin-top: 10px;
+}
+
+.preview {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.preview img,
+.preview audio,
+.preview video {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.convert-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.option-button {
+    position: absolute;
+    top: 10px;
+    right: 140px;
+}
+
+/* Additional Colorful Styling */
+.container:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+.alt-color h2 {
+    color: #007bff;
+    /* Alternative primary color */
+}
+
+.alt-color button {
+    background-color: #28a745;
+    /* Alternative secondary color */
+}
+
+.alt-color button:hover {
+    background-color: #218838;
+}

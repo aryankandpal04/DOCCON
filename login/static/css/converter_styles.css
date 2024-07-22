@@ -1,0 +1,126 @@
+/* converter_styles.css */
+
+
+.container {
+    background-color: #fff; 
+    padding: 50px;
+    margin: 20px auto;
+    border-radius: 80px;
+    box-shadow: 0 0 50px rgb(0, 195, 255);
+    width: 40%;
+    position: relative;
+    font-family: Arial, sans-serif;
+
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: rgba(0, 21, 255, 0.774);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+input[type="file"],
+select,
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.output {
+    margin-top: 10px;
+}
+
+.preview {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.preview img,
+.preview video {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.preview audio {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.convert-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.option-button {
+    position: absolute;
+    top: 10px;
+    right: 140px;
+}
+
+/* Additional Colorful Styling */
+.container:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+.alt-color h2 {
+    color: #007bff;
+}
+
+.alt-color button {
+    background-color: #28a745;
+} 
+
+.alt-color button:hover {
+    background-color: #218838;
+}
+
+/* Additional Styling for Download Buttons */
+a.download-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+a.download-button:hover {
+    background-color: #0056b3;
+}

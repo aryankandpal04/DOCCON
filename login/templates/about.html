@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Converter & Editor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_styles.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{{ url_for('static', filename='img/sidebar_logo.png') }}" alt="sidebar_logo">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">DOCCON</span>
+                    <span class="profession">Document Converter</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="{{ url_for('home') }}">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('image_converter') }}">
+                            <i class='bx bx-image icon'></i>
+                            <span class="text nav-text">Image Converter</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('audio_converter') }}">
+                            <i class='bx bx-headphone icon'></i>
+                            <span class="text nav-text">Audio Converter</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('video_converter') }}">
+                            <i class='bx bx-video icon'></i>
+                            <span class="text nav-text">Video Converter</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('pdf_to_word') }}">
+                            <i class='bx bx-note icon'></i>
+                            <span class="text nav-text">PDF to Word</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('word_to_pdf') }}">
+                            <i class='bx bx-detail icon'></i>
+                            <span class="text nav-text">Word to PDF</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('editing') }}">
+                            <i class='bx bx-edit icon'></i>
+                            <span class="text nav-text">Editing</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('compressor') }}">
+                            <i class='bx bx-collapse icon'></i>
+                            <span class="text nav-text">Compress</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ url_for('about') }}">
+                            <i class='bx bx-user icon'></i>
+                            <span class="text nav-text">About</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="{{ url_for('logout') }}">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <header class="header">
+            <h1><img src="{{ url_for('static', filename='img/main_logo.jpg') }}" alt="main_logo">Document Converter &
+                Editor</h1>
+        </header>
+
+        <div class="about"
+            style="max-width: 800px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 55px rgba(0, 195, 255, 0.671);">
+            <h1 style="color: rgb(0, 89, 255); text-align: center; font-size: 28px;">About Us</h1>
+            <p style="color: #0084ff; line-height: 1.6;">Welcome to Document Converter and Editor, your one-stop
+                solution for all your document and media conversion needs. Our versatile tool offers a wide range of
+                features designed to make your life easier. Whether you need to compress, convert, or edit files, we've
+                got you covered.</p>
+
+            <h2 style="color: rgb(0, 89, 255); font-size: 24px;">Our Features</h2>
+            <ul style="list-style-type: none; padding: 0;">
+                <li
+                    style="background: #e6f3ff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <strong>Image Compressor:</strong> Reduce the size of your images without compromising on quality.
+                    Perfect for web use and saving storage space.</li>
+                <li
+                    style="background: #cfe7ff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <strong>Image Converter:</strong> Convert images between various formats like JPEG, PNG, BMP, and
+                    more.</li>
+                <li
+                    style="background: #b8dbff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <strong>Audio Converter:</strong> Convert audio files to different formats such as MP3, WAV, AAC,
+                    and others.</li>
+                <li
+                    style="background: #a1cfff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <strong>Video Converter:</strong> Easily convert video files to formats like MP4, AVI, MOV, and more
+                    to ensure compatibility with all your devices.</li>
+                <li
+                    style="background: #8ac3ff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <strong>Word to PDF Converter:</strong> Convert your Word documents to PDF format for easy sharing
+                    and professional presentation.</li>
+                <li
+                    style="background: #7abaff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <strong>PDF to Word Converter:</strong> Transform your PDFs back into editable Word documents with
+                    our reliable converter.</li>
+                <li
+                    style="background: #69aaff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <strong>Image Editor:</strong> Edit your images with our simple yet powerful editing tools to
+                    enhance, crop, and adjust your photos.</li>
+            </ul>
+
+            <p style="color: #0084ff; line-height: 1.6;">Our mission is to provide an efficient, user-friendly platform
+                that helps you manage your files effortlessly. We constantly update our services to ensure we meet your
+                evolving needs and deliver the highest quality conversions and edits.</p>
+
+            <div class="team" style="margin-top: 20px;">
+                <h3 style="color: rgb(0, 89, 255); text-align: center; font-size: 24px;">Developer</h3>
+                <ul style="list-style-type: none; padding: 0; text-align: center;">
+                    <li style="margin: 10px auto; max-width: 350px;">
+                        <strong style="font-size: 20px; color: rgb(0, 89, 255);">Aryan Kandpal</strong>
+                        <div
+                            style="background: #e6f3ff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <p style="margin: 0; color: #333;">Aryan specializes in creating intuitive and responsive
+                                user interfaces. With a keen eye for design and a passion for front-end technologies, he
+                                ensures that our platform is both beautiful and easy to use.</p>
+                        </div>
+                        <div
+                            style="background: #cfe7ff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <p style="margin: 0; color: #333;">He has extensive experience in HTML, CSS, JavaScript, and
+                                Bootstrap, enabling him to build dynamic and interactive web applications.</p>
+                        </div>
+                        <div
+                            style="background: #b8dbff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <p style="margin: 0; color: #333;">He is also proficient in Python and the Flask framework,
+                                which allows him to develop robust and scalable server-side applications.</p>
+                        </div>
+                        <div
+                            style="background: #a1cfff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <p style="margin: 0; color: #333;">With a background in graphic design, he brings a unique
+                                perspective to web development, blending aesthetics with functionality seamlessly.</p>
+                        </div>
+                        <div
+                            style="background: #8ac3ff; margin: 10px 0; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <p style="margin: 0; color: #333;">He is passionate about learning and staying updated with
+                                the latest industry trends and technologies, ensuring that our platform remains
+                                cutting-edge and competitive.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <p style="color: #0084ff; line-height: 1.6;">Thank you for choosing Document Converter and Editor. We are
+                committed to providing you with the best tools and support to make your file management tasks simple and
+                efficient.</p>
+        </div>
+
+        <footer>
+
+            <p>&copy; 2024 Document Converter & Editor. All rights reserved.</p>
+        </footer>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/home_script.js') }}"></script>
+</body>
+
+</html>

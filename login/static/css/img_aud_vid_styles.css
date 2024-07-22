@@ -1,0 +1,98 @@
+header {
+    background-color: rgb(0, 149, 255);
+    padding: 20px;
+    text-align: center;
+    /* Transition effect */
+    box-shadow: 0 0 35px rgb(0, 195, 255);
+    /* Add some box shadow */
+    border-radius: 0 0 10px 10px;
+    /* Add some border radius */
+}
+header h1 img {
+    width: 100px;
+    float: left;
+}
+
+/* Styling for the navigation menu */
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav ul ul {
+    z-index: 1000; 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%; 
+    transform: translateX(-150%); 
+    background-color: #61cbf2;
+    min-width: 150px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    border-radius: 10px; 
+    
+}
+
+nav ul ul li {
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+nav ul ul li:hover{
+    transform: scale(1.05);
+}
+
+nav ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    z-index: 1000; /* Adjust the z-index value */
+}
+
+nav ul li:hover a {
+    background-color: rgb(177, 226, 245);
+}
+
+/* Styling for the images inside list items */
+li img {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+footer {
+    
+    background-color: rgb(0, 149, 255);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin-top: 500px;
+    z-index: 1000;
+    /* Adjust the z-index value */
+    transition: background-color 1s ease;
+    /* Transition effect */
+    box-shadow: 0 0 35px rgb(0, 195, 255);
+    /* Add some box shadow */
+    border-radius: 0 0 10px 10px;
+    /* Add some border radius */
+    
+}
